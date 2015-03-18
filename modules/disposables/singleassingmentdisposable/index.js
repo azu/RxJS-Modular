@@ -1,9 +1,10 @@
 var isDisposable = require('rx.utils').isDisposable;
 
 /**
-* Represents a disposable resource whose underlying disposable resource can be replaced by another disposable resource, causing automatic disposal of the previous underlying disposable resource.
+* Represents a disposable resource which only allows a single assignment of its underlying disposable resource.
+* If an underlying disposable resource has already been set, future attempts to set the underlying disposable resource will throw an Error.
 */
-function SerialDisposable () {
+function SingleAssignmentDisposable () {
   this.isDisposed = false;
   this.current = null;
 }
@@ -12,11 +13,15 @@ function SerialDisposable () {
 * Gets the underlying subscription.
 * @return {Disposable} The underlying subscription.
 */
-SerialDisposable.prototype.getDisposable = function () {
+SingleAssignmentDisposable.prototype.getDisposable = function () {
   return this.current;
 };
 
-SerialDisposable.prototype.setDisposable = function (value) {
+SingleAssignmentDisposable.prototype.setDisposable = function (value) {
+  if (this.current) {
+    throw new Error('Subscription has already been assigned');
+  }
+
   if (value && !isDisposable(value)) {
     throw new TypeError('value must have a "dispose" method.')
   }
@@ -33,7 +38,7 @@ SerialDisposable.prototype.setDisposable = function (value) {
 /**
  * Unsubscribes from the underlying subscription as well as all future replacements.
  */
- SerialDisposable.dispose = function () {
+ SingleAssignmentDisposable.dispose = function () {
     if (!this.isUnsubscribed) {
       this.isUnsubscribed = true;
       var old = this.current;
@@ -42,4 +47,4 @@ SerialDisposable.prototype.setDisposable = function (value) {
     old && old.unsubscribe();
 };
 
-module.exports = SerialDisposable;
+module.exports = SingleAssignmentDisposable;

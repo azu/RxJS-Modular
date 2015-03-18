@@ -1,5 +1,4 @@
-rx-disposable
-===============
+# rx.disposable - RxJS Disposable class #
 
 The [Reactive Extensions for JavaScript (RxJS)](https://github.com/Reactive-Extensions/RxJS) Disposable object.
 

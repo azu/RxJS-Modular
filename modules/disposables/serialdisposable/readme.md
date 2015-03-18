@@ -1,97 +1,95 @@
-rx-singleassignmentdisposable
-=============================
+# rx.serialdisposable - RxJS SerialDisposable #
 
-The [Reactive Extensions for JavaScript (RxJS)](https://github.com/Reactive-Extensions/RxJS) Single Assignment Subscription object.
+The [Reactive Extensions for JavaScript (RxJS)](https://github.com/Reactive-Extensions/RxJS) Serial Assignment Disposable object.
 
-Represents a subscription resource which only allows a single assignment of its underlying subscription resource.
-If an underlying subscription resource has already been set, future attempts to set the underlying subscription resource will throw an Error.
+Represents a disposable resource whose underlying disposable resource can be replaced by another disposable resource, causing automatic disposal of the previous underlying disposable resource.
 
 ## Documentation ##
 
-SingleAssignment Subscription Members
+SingleAssignment Disposable Members
 
-- [`SingleAssignmentSubscription.ctor`](#singleassignmentsubscription)
-- [`SingleAssignmentSubscription.prototype.subscription`](#singleassignmentsubscriptionprototypesubscription)
-- [`SingleAssignmentSubscription.prototype.unsubscribe`](#singleassignmentsubscriptionprototypeunsubscribe)
+- [`SerialDisposable.ctor`](#serialdisposable)
+- [`SerialDisposable.prototype.getDisposable`](#serialdisposableprototypegetdisposable)
+- [`SerialDisposable.prototype.setDisposable`](#serialdisposableprototypesetdisposable)
+- [`SerialDisposable.prototype.dispose`](#serialdisposableprototypedispose)
 
 * * *
 
-### <a id="#singleassignmentsubscription"></a>`SingleAssignmentSubscription`
-<a href="#singleassignmentsubscriptions">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modules/blob/master/modules/subscriptions/singleassignmentsubscription/singleassignmentsubscription.js "View in source") [&#x24C9;][1]
+### <a id="#serialdisposable"></a>`SerialDisposable`
+<a href="#serialdisposables">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modular/blob/master/modules/disposables/serialdisposable/index.js "View in source")
 
-Creates a new instance of the SingleAssignmentSubscription class.
+Creates a new instance of the SerialDisposable class.
 
-#### Example 
+#### Example
 
 ```js
-var Subscription = require('rx-subscription');
-var SingleAssignmentSubscription = require('rx-singleassignmentsubscription');
+var Disposable = require('rx.disposable');
+var SerialDisposable = require('rx.serialdisposable');
 
 // Create the instance
-var subscription = new SingleAssignmentSubscription();
+var disposable = new SerialDisposable();
 
-// Set the subscription
-susbcription.subscription = Subscription.empty;
+// Set the disposable
+susbcription.disposable = Disposable.empty;
 
 // Unsubscribe
-subscription.unsubscribe();
+disposable.unsubscribe();
 ```
 * * *
 
-### <a id="#singleassignmentsubscriptionprototypesubscription"></a>`SingleAssignmentSubscription.prototype.subscription`
-<a href="#singleassignmentsubscriptionprototypesubscription">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modules/blob/master/modules/subscriptions/singleassignmentsubscription/singleassignmentsubscription.js "View in source") [&#x24C9;][1]
+### <a id="#serialdisposableprototypegetdisposable"></a>`SerialDisposable.prototype.getDisposable()`
+<a href="#serialdisposableprototypedisposable">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modular/blob/master/modules/disposables/serialdisposable/index.js "View in source")
 
-Gets or sets the underlying subscription. After disposal, the result of getting this property is undefined.
-An error is thrown if the SingleAssignmentSubscription has already been assigned to.
+Gets or sets the underlying disposable. After disposal, the result of getting this property is undefined.
 
 #### Arguments
-1. `newValue` *(Subscription)*: The new subscription value.
+1. `newValue` *(Disposable)*: The new disposable value.
 
 #### Returns
-*(Subscription)*: The underlying Subscription.
+*(Disposable)*: The underlying Disposable.
 
-#### Example 
+#### Example
 
 ```js
-var Subscription = require('rx-subscription');
-var SingleAssignmentSubscription = require('rx-singleassignmentsubscription');
+var Disposable = require('rx.disposable');
+var SerialDisposable = require('rx.serialdisposable');
 
 // Create the instance
-var subscription = new SingleAssignmentSubscription();
+var disposable = new SerialDisposable();
 
-// Set the subscription
-susbcription.subscription = Subscription.empty;
+// Set the disposable
+susbcription.disposable = Disposable.empty;
 
-// Get the subscription
-var sub = subscription.subscription;
+// Get the disposable
+var sub = disposable.disposable;
 
 // Unsubscribe
-subscription.unsubscribe();
+disposable.dispose();
 ```
 * * *
 
-### <a id="#singleassignmentsubscriptionprototypeunsubscribe"></a>`SingleAssignmentSubscription.prototype.unsubscribe()`
-<a href="#singleassignmentsubscriptionprototypeunsubscribe">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modules/blob/master/modules/subscriptions/singleassignmentsubscription/singleassignmentsubscription.js "View in source") [&#x24C9;][1]
+### <a id="#serialdisposableprototypedispose"></a>`SerialDisposable.prototype.dispose()`
+<a href="#serialdisposableprototypedispose">#</a>[&#x24C8;](https://github.com/Reactive-Extensions/RxJS-Modular/blob/master/modules/disposables/serialdisposable/index.js "View in source") [&#x24C9;][1]
 
-Unsubscribes from the underlying subscription.
+Unsubscribes from the underlying disposable.
 
-#### Example 
+#### Example
 
 ```js
-var Subscription = require('rx-subscription');
-var SingleAssignmentSubscription = require('rx-singleassignmentsubscription');
+var Disposable = require('rx.disposable');
+var SerialDisposable = require('rx.serialdisposable');
 
 // Create the instance
-var subscription = new SingleAssignmentSubscription();
+var disposable = new SerialDisposable();
 
-// Set the subscription
-susbcription.subscription = Subscription.empty;
+// Set the disposable
+susbcription.setDisposable(Disposable.empty);
 
-// Get the subscription
-var sub = subscription.subscription;
+// Get the disposable
+var sub = disposable.getDisposable();
 
 // Unsubscribe
-subscription.unsubscribe();
+disposable.dispose();
 ```
 * * *
 
@@ -100,7 +98,7 @@ subscription.unsubscribe();
 Using [npm](http://npmjs.org):
 
 ```bash
-npm rx-singleassignmentdisposable
+npm rx.serialdisposable
 ```
 
 ## License ##

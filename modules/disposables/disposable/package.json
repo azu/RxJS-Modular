@@ -2,14 +2,14 @@
   "name": "rx.disposable",
   "title": "The Reactive Extensions for JavaScript (RxJS) Disposable.",
   "description": "The Reactive Extensions for JavaScript (RxJS) Disposable object.",
-  "version": "1.0.1",
-  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modules",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modular",
   "author": {
-    "name": "MS Open Tech"
+    "name": "Microsoft"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Reactive-Extensions/RxJS-Modules.git"
+    "url": "https://github.com/Reactive-Extensions/RxJS-Modular.git"
   },
   "licenses": [
     {

@@ -2,14 +2,14 @@
   "name": "rx.utils",
   "title": "The Reactive Extensions for JavaScript (RxJS) utilities.",
   "description": "The Reactive Extensions for JavaScript (RxJS) utilities.",
-  "version": "0.0.1",
-  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modules",
+  "version": "0.0.3",
+  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modular",
   "author": {
     "name": "Microsoft"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Reactive-Extensions/RxJS-Modules.git"
+    "url": "https://github.com/Reactive-Extensions/RxJS-Modular.git"
   },
   "licenses": [
     {
@@ -22,5 +22,5 @@
     "Rx",
     "RxJS"
   ],
-  "main": "utils.js"
+  "main": "index.js"
 }
