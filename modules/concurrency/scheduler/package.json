@@ -1,0 +1,34 @@
+{
+  "name": "rx.scheduler",
+  "version": "0.0.1",
+  "description": "Concurrency layer for the Reactive Extensions for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reactive-Extensions/RxJS-Modules.git"
+  },
+  "dependencies": {
+    "rx.disposable": "*"
+  },
+  "keywords": [
+    "Rx",
+    "RxJS",
+    "async",
+    "events",
+    "reactive"
+  ],
+  "author": "Microsoft",
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Reactive-Extensions/RxJS-Modules/issues"
+  },
+  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modules"
+}

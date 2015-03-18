@@ -1,0 +1,28 @@
+{
+  "name": "rx.serialdisposable",
+  "title": "The Reactive Extensions for JavaScript (RxJS) SerialAssignmentDisposable.",
+  "description": "Represents a disposable resource whic allows multiple assignments of its underlying disposable resource.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Reactive-Extensions/RxJS-Modules",
+  "author": {
+    "name": "MS Open Tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reactive-Extensions/RxJS-Modules.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "keywords": [
+    "Reactive",
+    "Rx",
+    "RxJS",
+    "events",
+    "async"
+  ],
+  "main": "index.js"
+}
