@@ -75,11 +75,16 @@ Note that this is a work in progress and feedback is welcome!
 
 ### Core ###
 - `rx.observable` - `Observable`
+- `rx.observer` - `Observer`
 
 ### Core Operators ###
+- `rx.observable.combinelatest` - `combinelatest`
 - `rx.observable.create` - `create`
 - `rx.observable.filter` - `filter`
+- `rx.observable.from` - `from`
+- `rx.observable.of` - `of`
 - `rx.observable.map` - `map`
+- `rx.observable.zip` - `zip`
 
 ### Disposables ###
 - `rx.compositedisposable` - `CompositeDisposable`
@@ -89,6 +94,11 @@ Note that this is a work in progress and feedback is welcome!
 
 ### Schedulers ###
 - `rx.scheduler` - `Scheduler`
+- `rx.currentthreadscheduler` - `CurrentThreadScheduler`
+- `rx.defaultscheduler` - `DefaultScheduler`
+- `rx.immediatescheduler` - `ImmediateScheduler`
+- `rx.testscheduler` - `TestScheduler`
+- `rx.virtualtimescheduler` - `VirtualTimeScheduler`
 
 ### Utilities ###
 - `rx.utils` - `utils`
